@@ -1,0 +1,103 @@
+<!-- <div class="row">
+    <br>
+    <br>
+
+    <div class="row">
+        <div class="col-md-5">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>
+                            Purchase ID
+                        </th>
+                        <th>
+                            Purchase Name
+                        </th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let p of purchase">
+                        <td>{{p.PId}}</td>
+                        <td><a href="#" (click)="DisplayProducts()" class="btn-url">{{p.PName}}</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-5" id="titleCol2">
+            <h3 class="text-center">
+                Purchase Details For
+            </h3>
+            <br>
+            <table class="table" *ngIf="flag">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>
+                            ITEM
+                        </th>
+                        <th>
+                            PRICE
+                        </th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let p of purchase">
+                        <td>{{p.PId}}</td>
+                        <td>{{p.PName}}</td>
+                    </tr>
+                </tbody>
+                <br>
+                <br>
+    
+                <button class="btn btn-danger">Close</button>
+            </table>
+        </div>
+
+    </div>
+</div> -->
+
+
+
+<!-- <div class="row">
+    <h2 class="text-danger text-center">Master - Details Using Component Communication</h2>
+</div>
+<hr>
+<div class="row">
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>PURCHASE NAME</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of purchase">
+                <td>{{p.PId}}</td>
+                <td><button class="btn btn-link">{{p.PName}}</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div> -->
+
+<div class="row">
+
+    <div class="col-md-12">
+        <mat-accordion class="example-headers-aling" >
+            <mat-expansion-panel *ngFor="let p of purchase">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <h2>{{p.PId}}</h2>
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        <h2 class="text-info">{{p.PName}}</h2>
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <app-purchase-order [purchaseItem]='p'></app-purchase-order>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </div>
+</div>

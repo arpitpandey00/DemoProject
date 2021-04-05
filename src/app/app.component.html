@@ -1,0 +1,22 @@
+<div class="container">
+  <h1 class="text-center">{{title}}</h1>
+  <div class="row">
+    <div class="col-md-3">
+      <button (click)="showDBDemo()" class="btn btn-danger">Data Binding Demo</button>
+    </div>
+    <div class="col-md-3">
+      <button (click)="showProducts()" class="btn btn-warning">Structural Directive Demo</button>
+    </div>
+    <div class="col-md-3">
+      <button (click)="showPurchase()" class="btn btn-info">Purchase</button>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+  <div class="col-md-12">
+    <app-tshirt-demo *ngIf="showDataBindindDemo"></app-tshirt-demo>
+    <app-product *ngIf="showProductDB"></app-product>
+    <app-purchase *ngIf="showPurchaseRec"></app-purchase>
+  </div>
+  </div>
+</div>

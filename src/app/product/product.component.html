@@ -1,0 +1,39 @@
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th> ID </th>
+
+                <th> TITLE </th>
+                <th> PRICE </th>
+                <th> EXPIRY DATE </th>
+                <th> QUANTITY </th>
+                <th> IN STOCK </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of products">
+                <td>{{p.Id}}</td>
+                <td>{{p.Title}}</td>
+                <td>{{p.Price | currency :"INR"}}</td>
+                <td>{{p.ExpiryDate |date}}</td>
+                <td>{{p.Quantity}}</td>
+
+                <td>
+                    <ng-container *ngIf="p.IsAvaliable; then instock else outofstock">
+
+                    </ng-container>
+                    <ng-template #instock>
+                        <i class="fa fa-check"  aria-hidden="true"></i>
+
+                    </ng-template>
+                    <ng-template #outofstock>
+                        <i class="fa fa-times"  aria-hidden="true"></i>
+                        <button class="btn btn-default">Order Now</button>
+                    </ng-template>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>

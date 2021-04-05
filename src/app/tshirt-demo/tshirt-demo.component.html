@@ -1,0 +1,15 @@
+<h1 class="title">{{title}}</h1>
+<h4 class="title">Enter heigth and width</h4>
+<div class="div1">
+  <input type="number" placeholder="heigth" class="class" [(ngModel)]='a' >
+  <br>
+  <input type="number" placeholder="width" class=class [(ngModel)]='b' >
+  <br>
+</div>
+<div class="div2">
+  <img [src]="imgSource" alt="Eye" class="class" [style.height.px]='a' [style.width.px]='b' (mouseenter)='changeTshirtMouseExit()' (mouseleave)='changeTshirtMouseEnter()'>
+  <br>
+  <br>
+  <button class="btn btn-danger" id="btn" (click)="SetWidth()" > defalut </button>
+  <!-- <img src=".//assets//back.jpg" > -->
+</div>
